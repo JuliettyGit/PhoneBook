@@ -1,9 +1,11 @@
-﻿let phoneBook = [];
+﻿let phoneBook = {
+    phoneBookItem: [],
+};
 
 
 phoneBook.add = function(_name, _phone, _email)
 {
-    phoneBook.push({name: _name, phone: _phone, email: _email});
+    phoneBook.phoneBookItem.push({name: _name, phone: _phone, email: _email});
     if(_name === '' || _phone === '' || _email === '' )
         alert('Unable to add empty contact');
     else
@@ -43,7 +45,7 @@ btnSearch.onclick = function ()
 
 phoneBook.remove = function(id) {
     document.getElementById(id).remove();
-    phoneBook.splice(id, 1);
+    phoneBook.phoneBookItem.splice(id, 1);
 }
 
 phoneBook.showTable = function () {
@@ -52,13 +54,13 @@ phoneBook.showTable = function () {
         tbody.removeChild(tbody.firstChild)
 
     // cells creation
-    for (let j = 0; j <= phoneBook.length; j++) {
+    for (let j = 0; j <= phoneBook.phoneBookItem.length; j++) {
         // table row creation
         let row = document.createElement("tr");
         row.id = j.toString();
 
         let cell = document.createElement("td");
-        let cellText = document.createTextNode(phoneBook[j].name);
+        let cellText = document.createTextNode( phoneBook.phoneBookItem[j].name);
         let btnDelete = document.createElement("Button");
         btnDelete.className="btn btn-danger btn-sm btn-close";
         btnDelete.id = j.toString();
@@ -68,13 +70,13 @@ phoneBook.showTable = function () {
         row.appendChild(cell);
 
         cell = document.createElement("td");
-        cellText = document.createTextNode(phoneBook[j].phone)
+        cellText = document.createTextNode(phoneBook.phoneBookItem[j].phone)
 
         cell.appendChild(cellText);
         row.appendChild(cell);
 
         cell = document.createElement("td");
-        cellText = document.createTextNode(phoneBook[j].email)
+        cellText = document.createTextNode(phoneBook.phoneBookItem[j].email)
 
         cell.appendChild(cellText);
         row.appendChild(cell);
