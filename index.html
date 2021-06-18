@@ -10,24 +10,30 @@
 <body>
 <div class="container">
 
-	<div class="h1 text-center my-2 bg-primary rounded text-white ">Phone book</div>
+	<div class="h1 text-center my-2 p-2 bg-primary rounded text-white ">Phone book</div>
 
-	<div class="container rounded bg-primary p-2">
+	<div class="container rounded bg-primary p-3">
+
 		<div class="input-group input-group-sm mb-3">
 			<span class="input-group-text" >Name</span>
 			<input type="text" id="inputName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 		</div>
+
 		<div class="input-group input-group-sm mb-3">
 			<span class="input-group-text" >Phone number</span>
-			<input type="tel" name="telphone" placeholder="+888 888 8888" pattern="[0-9]{2} [0-9]{3} [0-9]{4}" maxlength="13" id="inputNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+			<input type="tel" name="telphone" placeholder="+888 888 8888" maxlength="13" id="inputNumber" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 		</div>
+
 		<div class="input-group input-group-sm mb-3">
-			<span class="input-group-text" >E-mail</span>
-			<input type="email" id="inputEmail" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+			<span class="input-group-text">E-mail</span>
+			<input type="email" id="inputEmail" class="form-control" placeholder="email@mail.com" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 		</div>
-		<button type="button" id="btnAdd" class="btn btn-warning btn-sm fw-bold">Add contact</button>
-		<!--<button type="button" id="btnShow" class="btn btn-warning btn-sm fw-bold">Show all</button>-->
-		<div class="input-group input-group-sm mb-3 p-1">
+
+		<div class="d-grid gap-2 mb-3">
+		<button type="button" id="btnAdd" class="btn btn-warning btn-sm mb-1 fw-bold">Add contact</button>
+		</div>
+
+		<div class="input-group input-group-sm">
 			<input type="text" class="form-control" id ="searchInput" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 			<button class="btn btn-warning fw-bold" type="button" id="btnSearch inputGroup-sizing-sm">Find</button>
 		</div>
